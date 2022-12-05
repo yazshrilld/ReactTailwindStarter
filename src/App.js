@@ -1,14 +1,17 @@
-
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import Main from './main/Main';
+import Main from './Layout/Main/Main';
+import Login from './pages/Login/Login';
+import HomeLayout from './Layout/HomeLayout/HomeLayout';
 
 function App() {
   return (
    <>
-    <div className='bg-slate-800text-black text-3xl'>
-    Hello, Yazid from dev branch!
-    </div>
-    <Main />
+    <Routes>
+      <Route element={<Login />} path="/"/>
+      <Route element={<Main />} path="/homepage"/>
+      <Route element={<HomeLayout />} path="/home"/>
+    </Routes>
    </>
   );
 }
